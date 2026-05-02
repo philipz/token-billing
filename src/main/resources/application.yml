@@ -2,6 +2,10 @@ spring:
   application:
     name: token-billing
 
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+
   datasource:
     url: jdbc:postgresql://localhost:54323/token_billing
     username: postgres
