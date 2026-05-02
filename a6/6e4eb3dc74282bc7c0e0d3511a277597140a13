@@ -1,0 +1,44 @@
+build.gradle
+  162ac8b7820ab017 38-40
+src/test/java/org/tw/token_billing/controller/UsageControllerTest.java
+  162ac8b7820ab017 18-19,40-41,43-44,47,56-66
+src/test/java/org/tw/token_billing/service/UsageServiceTest.java
+  162ac8b7820ab017 247-300
+src/test/java/org/tw/token_billing/repository/BillRepositoryTest.java
+  162ac8b7820ab017 8-12,24-27,31,34-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "a66e4eb3dc74282bc7c0e0d3511a277597140a13",
+  "prompts": {
+    "162ac8b7820ab017": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45d22667-7fae-4f59-95ce-eb497fe542bf",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 97,
+      "total_deletions": 19,
+      "accepted_lines": 97,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/aa7fa5c88dae4abf7b6a88dcac9483ec5c6049f36e2614ef1a908f7fb353b87c"
+    },
+    "e65b26b5bafe65c0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3530a721-5b56-4e7d-bb64-d34e68d257f9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 94,
+      "total_deletions": 26,
+      "accepted_lines": 94,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/4ec55a105b72811a26b0126e0797fd9ab7a3692c4763707568033f4a50688533"
+    }
+  }
+}
