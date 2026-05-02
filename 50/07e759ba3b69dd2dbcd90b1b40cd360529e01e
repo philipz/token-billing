@@ -1,0 +1,24 @@
+.github/workflows/test.yml
+  162ac8b7820ab017 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "5007e759ba3b69dd2dbcd90b1b40cd360529e01e",
+  "prompts": {
+    "162ac8b7820ab017": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45d22667-7fae-4f59-95ce-eb497fe542bf",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 40,
+      "total_deletions": 0,
+      "accepted_lines": 40,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/c9ffb66eef3f295a1439b87bba04732b742d6bcfb8a4e1545b7676f5dd62f94e"
+    }
+  }
+}
