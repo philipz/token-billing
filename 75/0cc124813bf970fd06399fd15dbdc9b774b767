@@ -1,0 +1,38 @@
+src/test/java/org/tw/token_billing/service/UsageServiceTest.java
+  162ac8b7820ab017 262-266,303-315
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "750cc124813bf970fd06399fd15dbdc9b774b767",
+  "prompts": {
+    "162ac8b7820ab017": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45d22667-7fae-4f59-95ce-eb497fe542bf",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 18,
+      "total_deletions": 3,
+      "accepted_lines": 18,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/6d78c87a577881f57a419988d515060eaa12c493977457ff6fe51519100c2953"
+    },
+    "e65b26b5bafe65c0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3530a721-5b56-4e7d-bb64-d34e68d257f9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 18,
+      "total_deletions": 3,
+      "accepted_lines": 356,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/4ec55a105b72811a26b0126e0797fd9ab7a3692c4763707568033f4a50688533"
+    }
+  }
+}
