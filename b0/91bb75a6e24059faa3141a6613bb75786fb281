@@ -1,0 +1,24 @@
+src/test/java/org/tw/token_billing/service/UsageServiceTest.java
+  162ac8b7820ab017 262-266,305-310,313,315-331
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "b091bb75a6e24059faa3141a6613bb75786fb281",
+  "prompts": {
+    "162ac8b7820ab017": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45d22667-7fae-4f59-95ce-eb497fe542bf",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 58,
+      "total_deletions": 24,
+      "accepted_lines": 58,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/62c33dcd683c95747e894688091ef423dcc5aaab3cec29374fa453b76c7d3528"
+    }
+  }
+}
