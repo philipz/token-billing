@@ -1,0 +1,24 @@
+requirements/token-usage-billing/srs.md
+  e65b26b5bafe65c0 194-208
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "f2aea3eba05e56a018a45706d41a35281cd40d67",
+  "prompts": {
+    "e65b26b5bafe65c0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3530a721-5b56-4e7d-bb64-d34e68d257f9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 15,
+      "total_deletions": 7,
+      "accepted_lines": 262,
+      "overriden_lines": 11,
+      "messages_url": "https://usegitai.com/cas/efa702e882e3d98d3249f366afcdfa0df1e48d9df78f25d144c2bf00095b1dab"
+    }
+  }
+}
