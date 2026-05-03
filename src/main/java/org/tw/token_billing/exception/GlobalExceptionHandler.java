@@ -1,10 +1,12 @@
 package org.tw.token_billing.exception;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.net.URI;
@@ -26,8 +28,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     protected org.springframework.http.ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex,
             org.springframework.http.HttpHeaders headers,
-            org.springframework.http.HttpStatus status,
-            org.springframework.web.servlet.support.ServletWebRequest request) {
+            HttpStatusCode status,
+            WebRequest request) {
 
         String detail = ex.getBindingResult().getFieldErrors().stream()
                 .map(error -> error.getField() + ": " + error.getDefaultMessage())
@@ -39,7 +41,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         );
         problemDetail.setTitle("Invalid request body");
         problemDetail.setType(URI.create("about:blank"));
-        problemDetail.setInstance(URI.create(request.getRequest().getRequestURI()));
+        problemDetail.setInstance(URI.create(request.getDescription(false)));
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problemDetail);
     }
@@ -47,7 +49,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(CustomerNotFoundException.class)
     public org.springframework.http.ResponseEntity<ProblemDetail> handleCustomerNotFound(
             CustomerNotFoundException ex,
-            javax.servlet.http.HttpServletRequest request) {
+            jakarta.servlet.http.HttpServletRequest request) {
 
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(
                 HttpStatus.NOT_FOUND,
@@ -63,7 +65,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(InvalidCustomerIdFormatException.class)
     public org.springframework.http.ResponseEntity<ProblemDetail> handleInvalidCustomerId(
             InvalidCustomerIdFormatException ex,
-            javax.servlet.http.HttpServletRequest request) {
+            jakarta.servlet.http.HttpServletRequest request) {
 
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(
                 HttpStatus.BAD_REQUEST,
@@ -79,7 +81,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(TokenCountNegativeException.class)
     public org.springframework.http.ResponseEntity<ProblemDetail> handleTokenCountNegative(
             TokenCountNegativeException ex,
-            javax.servlet.http.HttpServletRequest request) {
+            jakarta.servlet.http.HttpServletRequest request) {
 
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(
                 HttpStatus.BAD_REQUEST,
@@ -95,7 +97,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(NoActiveSubscriptionException.class)
     public org.springframework.http.ResponseEntity<ProblemDetail> handleNoActiveSubscription(
             NoActiveSubscriptionException ex,
-            javax.servlet.http.HttpServletRequest request) {
+            jakarta.servlet.http.HttpServletRequest request) {
 
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(
                 HttpStatus.CONFLICT,
@@ -111,7 +113,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(Exception.class)
     public org.springframework.http.ResponseEntity<ProblemDetail> handleGenericException(
             Exception ex,
-            javax.servlet.http.HttpServletRequest request) {
+            jakarta.servlet.http.HttpServletRequest request) {
 
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(
                 HttpStatus.INTERNAL_SERVER_ERROR,

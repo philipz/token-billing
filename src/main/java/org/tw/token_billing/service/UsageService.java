@@ -20,10 +20,15 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.UUID;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * Service for processing token usage billing.
  * Handles business logic per SRS-F-9 and SRS-F-10.
  */
+@Service
+@Transactional
 public class UsageService {
 
     private final CustomerRepository customerRepository;
@@ -47,10 +52,9 @@ public class UsageService {
     public UsageResponse processUsage(UsageRequest request) {
         String customerId = request.customerId();
 
-        // Validate customer exists (SRS-F-6 step 4)
-        if (!customerRepository.existsById(customerId)) {
-            throw new CustomerNotFoundException(customerId);
-        }
+        // Validate customer exists and acquire lock (SRS-F-6 step 4, SRS-F-11)
+        customerRepository.findByIdForUpdate(customerId)
+                .orElseThrow(() -> new CustomerNotFoundException(customerId));
 
         // Resolve active subscription (SRS-F-7)
         LocalDate today = LocalDate.now(ZoneOffset.UTC);
@@ -58,14 +62,14 @@ public class UsageService {
                 .orElseThrow(() -> new NoActiveSubscriptionException(customerId));
 
         // Calculate current month usage (SRS-F-8)
-        LocalDateTime monthStart = today.withDayOfMonth(1).atStartOfDay();
-        LocalDateTime monthEnd = monthStart.plusMonths(1);
-        int currentMonthUsage = billRepository.getCurrentMonthUsage(customerId, monthStart, monthEnd);
+        Instant monthStart = today.withDayOfMonth(1).atStartOfDay(ZoneOffset.UTC).toInstant(null);
+        Instant monthEnd = today.withDayOfMonth(1).plusMonths(1).atStartOfDay(ZoneOffset.UTC).toInstant(null);
+        long currentMonthUsage = billRepository.getCurrentMonthUsage(customerId, monthStart, monthEnd);
 
         // Calculate token usage (SRS-F-9)
         int totalTokens = request.promptTokens() + request.completionTokens();
         int monthlyQuota = subscription.getPlan().getMonthlyQuota();
-        int remainingQuota = Math.max(0, monthlyQuota - currentMonthUsage);
+        int remainingQuota = Math.max(0, monthlyQuota - (int) currentMonthUsage);
         int tokensFromQuota = Math.min(totalTokens, remainingQuota);
         int overageTokens = totalTokens - tokensFromQuota;
 
