@@ -1,0 +1,24 @@
+src/main/java/org/tw/token_billing/exception/GlobalExceptionHandler.java
+  3adfba4bf1100423 3,8,15-16,28-32,38-58,60,62-79,85-90,97-101,110-112,114-117,119-122,125-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "26b6dffdcee535cc8a0e4f7b4a10f1e0147cb21f",
+  "prompts": {
+    "3adfba4bf1100423": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "74711453-b071-4e1e-a2e7-35bd7b1e93c9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 77,
+      "total_deletions": 51,
+      "accepted_lines": 77,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/5025bfc69d20fcf3bfa275a7666537723c5fb4e4168bf124fee2b1668e208da8"
+    }
+  }
+}
