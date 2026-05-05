@@ -1,0 +1,22 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "c3fce2d050c47599e1b5dbf0699dfb9331d6d211",
+  "prompts": {
+    "3adfba4bf1100423": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "74711453-b071-4e1e-a2e7-35bd7b1e93c9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 803,
+      "total_deletions": 162,
+      "accepted_lines": 862,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/d8bb9b08dafca123d0f398722c48aab13e3e398f1ffba176420debc06991a176"
+    }
+  }
+}
