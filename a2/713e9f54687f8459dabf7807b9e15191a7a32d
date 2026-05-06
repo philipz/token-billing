@@ -1,0 +1,26 @@
+src/main/resources/db/migration/V1__Create_tables.sql
+  3adfba4bf1100423 57-59
+src/test/java/org/tw/token_billing/repository/CustomerSubscriptionRepositoryTest.java
+  3adfba4bf1100423 165-175
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "a2713e9f54687f8459dabf7807b9e15191a7a32d",
+  "prompts": {
+    "3adfba4bf1100423": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "74711453-b071-4e1e-a2e7-35bd7b1e93c9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 1,
+      "accepted_lines": 846,
+      "overriden_lines": 2,
+      "messages_url": "https://usegitai.com/cas/abb8ab6ea087fd86331e17e1edd054d263836d2aebe9b50adb6277b834f4e5f5"
+    }
+  }
+}
