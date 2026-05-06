@@ -1,0 +1,24 @@
+src/test/java/org/tw/token_billing/repository/CustomerSubscriptionRepositoryTest.java
+  3adfba4bf1100423 1-176
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "bfaaee41bdd95c53837ce58d16fb6dfacb40d990",
+  "prompts": {
+    "3adfba4bf1100423": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "74711453-b071-4e1e-a2e7-35bd7b1e93c9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 1009,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/ddfb50c8c17c660480e3791463aef88aa4cb0c2f52bbd3403206ec3de700e7ce"
+    }
+  }
+}
