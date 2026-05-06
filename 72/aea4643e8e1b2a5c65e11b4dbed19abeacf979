@@ -1,0 +1,24 @@
+docs/superpowers/specs/2026-05-06-idempotency-key-design.md
+  3adfba4bf1100423 1-331
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "72aea4643e8e1b2a5c65e11b4dbed19abeacf979",
+  "prompts": {
+    "3adfba4bf1100423": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "74711453-b071-4e1e-a2e7-35bd7b1e93c9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "philipz",
+      "messages": [],
+      "total_additions": 343,
+      "total_deletions": 12,
+      "accepted_lines": 1165,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/5993f09c3b4507d4fa289a49815100faeee7cfdb1a88aea30468382a6bd0c827"
+    }
+  }
+}
