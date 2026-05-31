@@ -81,7 +81,9 @@ describe('UsageForm — Idempotency-Key field validation', () => {
   it('accepts a 255-character key (upper boundary)', async () => {
     const user = userEvent.setup()
     renderForm()
-    await user.type(screen.getByLabelText(/idempotency-key/i), 'a'.repeat(255))
+    const input = screen.getByLabelText(/idempotency-key/i)
+    await user.click(input)
+    await user.paste('a'.repeat(255))
     expect(screen.getByLabelText(/idempotency-key/i)).not.toHaveClass('error')
   })
 
@@ -95,7 +97,9 @@ describe('UsageForm — Idempotency-Key field validation', () => {
   it('shows error for a 256-character key (too long)', async () => {
     const user = userEvent.setup()
     renderForm()
-    await user.type(screen.getByLabelText(/idempotency-key/i), 'a'.repeat(256))
+    const input = screen.getByLabelText(/idempotency-key/i)
+    await user.click(input)
+    await user.paste('a'.repeat(256))
     expect(screen.getByLabelText(/idempotency-key/i)).toHaveClass('error')
   })
 

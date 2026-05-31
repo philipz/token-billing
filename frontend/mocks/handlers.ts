@@ -10,7 +10,7 @@ export const MOCK_BILL = {
   overageTokens: 0,
   totalCharge: '0.00',
   currency: 'USD',
-  calculatedAt: '2026-01-01T00:00:00Z',
+  calculatedAt: '2020-01-01T00:00:00Z',
 }
 
 export const MOCK_CUSTOMER = {

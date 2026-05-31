@@ -42,12 +42,8 @@ describe('CustomerSwitcher', () => {
     const user = userEvent.setup()
     render(<CustomerSwitcher />)
 
-    // Don't await — fire the event and immediately check the loading state
-    const selectPromise = user.selectOptions(screen.getByRole('combobox'), 'CUST-001')
-    await waitFor(() => {
-      expect(screen.getByText('Loading customer data…')).toBeInTheDocument()
-    })
-    await selectPromise
+    await user.selectOptions(screen.getByRole('combobox'), 'CUST-001')
+    expect(await screen.findByText('Loading customer data…')).toBeInTheDocument()
   })
 
   it('renders customer info card after selecting a customer', async () => {
